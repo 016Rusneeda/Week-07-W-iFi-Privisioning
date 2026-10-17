@@ -142,6 +142,9 @@ wifi_prov_mgr_endpoint_register("custom-data", custom_prov_data_handler, NULL);
    - หาก PoP ไม่ตรง $\rightarrow$ Trigger Event `PROTOCOMM_SECURITY_SESSION_CREDENTIALS_MISMATCH` และปฏิเสธการเชื่อมต่อ
    - หาก PoP ถูกต้อง $\rightarrow$ Trigger Event `PROTOCOMM_SECURITY_SESSION_SETUP_OK` และสร้าง AES Session Key สำเร็จ
 
+<img width="922" height="911" alt="แบบแผนที่ยังไม่ได้ตั้งชื่อ drawio (5)" src="https://github.com/user-attachments/assets/817687d5-5f77-497a-b936-f478eab75427" />
+
+
 ### ภารกิจที่ 2: ผังการรับส่งข้อมูลผ่าน Custom Endpoint (Custom Data Handler Flow)
 ให้นักศึกษาวาด Sequence / Data Flow ของฟังก์ชัน `custom_prov_data_handler()`:
 1. ข้อมูล `inbuf` ถูกส่งเข้ามาจากสมาร์ตโฟนผ่าน Protocomm
@@ -149,9 +152,7 @@ wifi_prov_mgr_endpoint_register("custom-data", custom_prov_data_handler, NULL);
 3. การจัดสรรหน่วยความจำแบบไดนามิกด้วย `strdup()` ให้กับ `*outbuf`
 4. ทำไมตัวแปร `*outbuf` จึงต้องจัดสรรใน Heap Memory (ทำไมจึงใช้ตัวแปร Local Static Array ธรรมดาไม่ได้)?
 
-```text
-[พื้นที่สำหรับแนบรูปภาพ Diagram ที่นักศึกษาเขียนขึ้นด้วย Draw.io / Mermaid / วาดมือ]
-```
+<img width="1074" height="960" alt="แบบแผนที่ยังไม่ได้ตั้งชื่อ drawio (6)" src="https://github.com/user-attachments/assets/45ebaeb5-156b-4ae6-b8fc-e66c4da99c40" />
 
 ---
 
