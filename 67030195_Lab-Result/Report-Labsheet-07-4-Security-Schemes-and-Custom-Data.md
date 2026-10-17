@@ -160,9 +160,9 @@ wifi_prov_mgr_endpoint_register("custom-data", custom_prov_data_handler, NULL);
 
 | สถานการณ์ทดสอบ | ค่า PoP ที่ป้อน | ผลลัพธ์บนแอปมือถือ | ข้อความ Log ใน Serial Monitor |
 | :--- | :--- | :--- | :--- |
-| **1. ป้อน PoP ผิดพลาด** | `wrong1234` | | |
-| **2. ป้อน PoP ถูกต้อง** | `abcd1234` | | |
-| **3. ส่ง Custom Data** | `TEST_DATA_999` | | |
+| **1. ป้อน PoP ผิดพลาด** | `wrong1234` |แสดงข้อความแจ้งเตือนข้อผิดพลาด / Provisioning Failed | [SECURITY ALERT]: INVALID PoP / Unauthorized Access!|
+| **2. ป้อน PoP ถูกต้อง** | `abcd1234` | ผ่านเข้าสู่หน้าตั้งค่าเครือข่ายและเมนู Custom Data สำเร็จ| [SECURITY SUCCESS]: Valid PoP! Secured Session OK!|
+| **3. ส่ง Custom Data** | `TEST_DATA_999` | ได้รับข้อความตอบกลับ ACK_FROM_ESP32_SUCCESS| [CUSTOM DATA RECEIVED]:TEST_DATA_999|
 
 ---
 
